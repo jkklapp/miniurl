@@ -35,7 +35,7 @@ class ServerTestCase(unittest.TestCase):
         self.assertEqual(rv.status_code, 201)
         o = urlparse(json.loads(rv.data).get('shortened_url'))
         rv = self.app.get(o.path)
-        self.assertEqual(rv.status_code, 301)
+        self.assertEqual(rv.status_code, 302)
 
 
 if __name__ == '__main__':
